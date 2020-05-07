@@ -9,6 +9,7 @@ class App extends React.Component {
       power: true,
       powerStatus: "on",
       sliderVal: 1,
+      bank: "Bank 1",
     };
     this.handleQ = this.handleQ.bind(this);
     this.handleW = this.handleW.bind(this);
@@ -21,6 +22,21 @@ class App extends React.Component {
     this.handleC = this.handleC.bind(this);
     this.power = this.power.bind(this);
     this.adjustVolume = this.adjustVolume.bind(this);
+    this.setBank = this.setBank.bind(this);
+  }
+
+  setBank() {
+    if (this.state.bank === "Bank 1") {
+      this.setState({
+        bank: "Bank 2",
+        display: "Smooth Piano Kit",
+      });
+    } else if (this.state.bank === "Bank 2") {
+      this.setState({
+        bank: "Bank 1",
+        display: "Heater Kit",
+      });
+    }
   }
 
   adjustVolume(e) {
@@ -49,58 +65,87 @@ class App extends React.Component {
   }
 
   handleQ() {
-    if (this.state.power === true) {
+    if (this.state.power === true && this.state.bank === "Bank 1") {
       let audio = document.getElementById("Q");
       audio.volume = this.state.sliderVal;
       audio.play();
       this.setState((state) => ({
         display: "Heater-1",
       }));
+    } else if (this.state.power === true && this.state.bank === "Bank 2") {
+      let audio = document.getElementById("Q-2");
+      audio.volume = this.state.sliderVal;
+      audio.play();
+      this.setState((state) => ({
+        display: "Chord-1",
+      }));
     }
   }
+
   handleW() {
-    if (this.state.power === true) {
+    if (this.state.power === true && this.state.bank === "Bank 1") {
       let audio = document.getElementById("W");
       audio.volume = this.state.sliderVal;
       audio.play();
       this.setState((state) => ({
         display: "Heater-2",
       }));
+    } else if (this.state.power === true && this.state.bank === "Bank 2") {
+      let audio = document.getElementById("W-2");
+      audio.volume = this.state.sliderVal;
+      audio.play();
+      this.setState((state) => ({
+        display: "Chord-2",
+      }));
     }
   }
+
   handleE() {
-    if (this.state.power === true) {
+    if (this.state.power === true && this.state.bank === "Bank 1") {
       let audio = document.getElementById("E");
       audio.volume = this.state.sliderVal;
       audio.play();
       this.setState((state) => ({
         display: "Heater-3",
       }));
+    } else if (this.state.power === true && this.state.bank === "Bank 2") {
+      let audio = document.getElementById("E-2");
+      audio.volume = this.state.sliderVal;
+      audio.play();
+      this.setState((state) => ({
+        display: "Chord-3",
+      }));
     }
   }
+
   handleA() {
-    if (this.state.power === true) {
+    if (this.state.power === true && this.state.bank === "Bank 1") {
       let audio = document.getElementById("A");
       audio.volume = this.state.sliderVal;
       audio.play();
       this.setState((state) => ({
         display: "Heater-4",
       }));
+    } else if (this.state.power === true && this.state.bank === "Bank 2") {
+      let audio = document.getElementById("A-2");
+      audio.volume = this.state.sliderVal;
+      audio.play();
+      this.setState((state) => ({
+        display: "Shaker",
+      }));
     }
   }
+
   handleS() {
-    if (this.state.power === true) {
+    if (this.state.power === true && this.state.bank === "Bank 1") {
       let audio = document.getElementById("S");
       audio.volume = this.state.sliderVal;
       audio.play();
       this.setState((state) => ({
         display: "Clap",
       }));
-    }
-  }
-  handleD() {
-    if (this.state.power === true) {
-      let audio = document.getElementById("D");
+    } else if (this.state.power === true && this.state.bank === "Bank 2") {
+      let audio = document.getElementById("S-2");
       audio.volume = this.state.sliderVal;
       audio.play();
       this.setState((state) => ({
@@ -108,33 +153,72 @@ class App extends React.Component {
       }));
     }
   }
+
+  handleD() {
+    if (this.state.power === true && this.state.bank === "Bank 1") {
+      let audio = document.getElementById("D");
+      audio.volume = this.state.sliderVal;
+      audio.play();
+      this.setState((state) => ({
+        display: "Open-HH",
+      }));
+    } else if (this.state.power === true && this.state.bank === "Bank 2") {
+      let audio = document.getElementById("D-2");
+      audio.volume = this.state.sliderVal;
+      audio.play();
+      this.setState((state) => ({
+        display: "Closed-HH",
+      }));
+    }
+  }
   handleZ() {
-    if (this.state.power === true) {
+    if (this.state.power === true && this.state.bank === "Bank 1") {
       let audio = document.getElementById("Z");
       audio.volume = this.state.sliderVal;
       audio.play();
       this.setState((state) => ({
         display: "Kick-n'-Hat",
       }));
+    } else if (this.state.power === true && this.state.bank === "Bank 2") {
+      let audio = document.getElementById("Z-2");
+      audio.volume = this.state.sliderVal;
+      audio.play();
+      this.setState((state) => ({
+        display: "Punchy Kick",
+      }));
     }
   }
   handleX() {
-    if (this.state.power === true) {
+    if (this.state.power === true && this.state.bank === "Bank 1") {
       let audio = document.getElementById("X");
       audio.volume = this.state.sliderVal;
       audio.play();
       this.setState((state) => ({
         display: "Kick",
       }));
+    } else if (this.state.power === true && this.state.bank === "Bank 2") {
+      let audio = document.getElementById("X-2");
+      audio.volume = this.state.sliderVal;
+      audio.play();
+      this.setState((state) => ({
+        display: "Side Stick",
+      }));
     }
   }
   handleC() {
-    if (this.state.power === true) {
+    if (this.state.power === true && this.state.bank === "Bank 1") {
       let audio = document.getElementById("C");
       audio.volume = this.state.sliderVal;
       audio.play();
       this.setState((state) => ({
         display: "Closed-HH",
+      }));
+    } else if (this.state.power === true && this.state.bank === "Bank 2") {
+      let audio = document.getElementById("C-2");
+      audio.volume = this.state.sliderVal;
+      audio.play();
+      this.setState((state) => ({
+        display: "Snare",
       }));
     }
   }
@@ -168,7 +252,8 @@ class App extends React.Component {
   render() {
     return (
       <div id="drum-machine" style={{ "margin-left": 100 }}>
-        <a className="drum-pad" id="Heater-1" onClick={this.handleQ}>
+        {/* Q BUTTON */}
+        <button className="drum-pad" id="Heater-1" onClick={this.handleQ}>
           Q
           <audio
             src="../Audio-Files/Heater-1.mp3"
@@ -176,8 +261,19 @@ class App extends React.Component {
             className="clip"
             type="audio/mp3"
           ></audio>
-        </a>
-        <a className="drum-pad" id="Heater-2" onClick={this.handleW}>
+          <audio
+            src="../Audio-Files/Chord-1.mp3"
+            id="Q-2"
+            className="clip"
+            type="audio/mp3"
+          ></audio>
+        </button>
+        {/* W BUTTON */}
+        <button
+          clbuttonssNbuttonme="drum-pbuttond"
+          id="Hebuttonter-2"
+          onClick={this.handleW}
+        >
           W
           <audio
             src="../Audio-Files/Heater-2.mp3"
@@ -185,8 +281,15 @@ class App extends React.Component {
             className="clip"
             type="audio/mp3"
           ></audio>
-        </a>
-        <a className="drum-pad" id="Heater-3" onClick={this.handleE}>
+          <audio
+            src="../Audio-Files/Chord-2.mp3"
+            id="W-2"
+            className="clip"
+            type="audio/mp3"
+          ></audio>
+        </button>
+        {/* E BUTTON */}
+        <button className="drum-pad" id="Heater-3" onClick={this.handleE}>
           E
           <audio
             src="../Audio-Files/Heater-3.mp3"
@@ -194,8 +297,15 @@ class App extends React.Component {
             className="clip"
             type="audio/mp3"
           ></audio>
-        </a>
-        <a className="drum-pad" id="Heater-4" onClick={this.handleA}>
+          <audio
+            src="../Audio-Files/Chord-3.mp3"
+            id="E-2"
+            className="clip"
+            type="audio/mp3"
+          ></audio>
+        </button>
+        {/* A BUTTON */}
+        <button className="drum-pad" id="Heater-4" onClick={this.handleA}>
           A
           <audio
             src="../Audio-Files/Heater-4_1.mp3"
@@ -203,8 +313,15 @@ class App extends React.Component {
             className="clip"
             type="audio/mp3"
           ></audio>
-        </a>
-        <a className="drum-pad" id="Clap" onClick={this.handleS}>
+          <audio
+            src="../Audio-Files/Shaker.mp3"
+            id="A-2"
+            className="clip"
+            type="audio/mp3"
+          ></audio>
+        </button>
+        {/* S BUTTON */}
+        <button className="drum-pad" id="Clap" onClick={this.handleS}>
           S
           <audio
             src="../Audio-Files/Clap.mp3"
@@ -212,8 +329,15 @@ class App extends React.Component {
             className="clip"
             type="audio/mp3"
           ></audio>
-        </a>
-        <a className="drum-pad" id="Open-HH" onClick={this.handleD}>
+          <audio
+            src="../Audio-Files/Open-HH-2.mp3"
+            id="S-2"
+            className="clip"
+            type="audio/mp3"
+          ></audio>
+        </button>
+        {/* D BUTTON */}
+        <button className="drum-pad" id="Open-HH" onClick={this.handleD}>
           D
           <audio
             src="../Audio-Files/Open-HH.mp3"
@@ -221,8 +345,15 @@ class App extends React.Component {
             className="clip"
             type="audio/mp3"
           ></audio>
-        </a>
-        <a className="drum-pad" id="Kick-n'-Hat" onClick={this.handleZ}>
+          <audio
+            src="../Audio-Files/Closed-HH-2.mp3"
+            id="D-2"
+            className="clip"
+            type="audio/mp3"
+          ></audio>
+        </button>
+        {/* Z BUTTON */}
+        <button className="drum-pad" id="Kick-n'-Hat" onClick={this.handleZ}>
           Z
           <audio
             src="../Audio-Files/Kick-n-Hat.mp3"
@@ -230,8 +361,15 @@ class App extends React.Component {
             className="clip"
             type="audio/mp3"
           ></audio>
-        </a>
-        <a className="drum-pad" id="Kick" onClick={this.handleX}>
+          <audio
+            src="../Audio-Files/Punchy-Kick.mp3"
+            id="Z-2"
+            className="clip"
+            type="audio/mp3"
+          ></audio>
+        </button>
+        {/* X BUTTON */}
+        <button className="drum-pad" id="Kick" onClick={this.handleX}>
           X
           <audio
             src="../Audio-Files/Kick.mp3"
@@ -239,8 +377,15 @@ class App extends React.Component {
             className="clip"
             type="audio/mp3"
           ></audio>
-        </a>
-        <a className="drum-pad" id="Closed-HH" onClick={this.handleC}>
+          <audio
+            src="../Audio-Files/Side-Stick.mp3"
+            id="X-2"
+            className="clip"
+            type="audio/mp3"
+          ></audio>
+        </button>
+        {/* C BUTTON */}
+        <button className="drum-pad" id="Closed-HH" onClick={this.handleC}>
           C
           <audio
             src="../Audio-Files/Closed-HH.mp3"
@@ -248,7 +393,13 @@ class App extends React.Component {
             className="clip"
             type="audio/mp3"
           ></audio>
-        </a>
+          <audio
+            src="../Audio-Files/Snare.mp3"
+            id="C-2"
+            className="clip"
+            type="audio/mp3"
+          ></audio>
+        </button>
 
         <p>Hello Drum Machine World</p>
         <p id="display">{this.state.display}</p>
@@ -267,6 +418,7 @@ class App extends React.Component {
           POWER
         </a>
         <p className="power-status">{this.state.powerStatus}</p>
+        <button onClick={this.setBank}>Bank</button>
       </div>
     );
   }
