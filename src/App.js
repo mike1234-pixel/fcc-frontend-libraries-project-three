@@ -5,9 +5,10 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      sound: "",
+      display: "",
       power: true,
       powerStatus: "on",
+      sliderVal: 1,
     };
     this.handleQ = this.handleQ.bind(this);
     this.handleW = this.handleW.bind(this);
@@ -19,6 +20,16 @@ class App extends React.Component {
     this.handleX = this.handleX.bind(this);
     this.handleC = this.handleC.bind(this);
     this.power = this.power.bind(this);
+    this.adjustVolume = this.adjustVolume.bind(this);
+  }
+
+  adjustVolume(e) {
+    this.setState({
+      sliderVal: e.target.value,
+      display: "Volume: " + Math.round(e.target.value * 100),
+    });
+
+    console.log(this.state.sliderVal);
   }
 
   power() {
@@ -39,73 +50,91 @@ class App extends React.Component {
 
   handleQ() {
     if (this.state.power === true) {
-      document.getElementById("Q").play();
+      let audio = document.getElementById("Q");
+      audio.volume = this.state.sliderVal;
+      audio.play();
       this.setState((state) => ({
-        sound: "Heater-1",
+        display: "Heater-1",
       }));
     }
   }
   handleW() {
     if (this.state.power === true) {
-      document.getElementById("W").play();
+      let audio = document.getElementById("W");
+      audio.volume = this.state.sliderVal;
+      audio.play();
       this.setState((state) => ({
-        sound: "Heater-2",
+        display: "Heater-2",
       }));
     }
   }
   handleE() {
     if (this.state.power === true) {
-      document.getElementById("E").play();
+      let audio = document.getElementById("E");
+      audio.volume = this.state.sliderVal;
+      audio.play();
       this.setState((state) => ({
-        sound: "Heater-3",
+        display: "Heater-3",
       }));
     }
   }
   handleA() {
     if (this.state.power === true) {
-      document.getElementById("A").play();
+      let audio = document.getElementById("A");
+      audio.volume = this.state.sliderVal;
+      audio.play();
       this.setState((state) => ({
-        sound: "Heater-4",
+        display: "Heater-4",
       }));
     }
   }
   handleS() {
     if (this.state.power === true) {
-      document.getElementById("S").play();
+      let audio = document.getElementById("S");
+      audio.volume = this.state.sliderVal;
+      audio.play();
       this.setState((state) => ({
-        sound: "Clap",
+        display: "Clap",
       }));
     }
   }
   handleD() {
     if (this.state.power === true) {
-      document.getElementById("D").play();
+      let audio = document.getElementById("D");
+      audio.volume = this.state.sliderVal;
+      audio.play();
       this.setState((state) => ({
-        sound: "Open-HH",
+        display: "Open-HH",
       }));
     }
   }
   handleZ() {
     if (this.state.power === true) {
-      document.getElementById("Z").play();
+      let audio = document.getElementById("Z");
+      audio.volume = this.state.sliderVal;
+      audio.play();
       this.setState((state) => ({
-        sound: "Kick-n'-Hat",
+        display: "Kick-n'-Hat",
       }));
     }
   }
   handleX() {
     if (this.state.power === true) {
-      document.getElementById("X").play();
+      let audio = document.getElementById("X");
+      audio.volume = this.state.sliderVal;
+      audio.play();
       this.setState((state) => ({
-        sound: "Kick",
+        display: "Kick",
       }));
     }
   }
   handleC() {
     if (this.state.power === true) {
-      document.getElementById("C").play();
+      let audio = document.getElementById("C");
+      audio.volume = this.state.sliderVal;
+      audio.play();
       this.setState((state) => ({
-        sound: "Closed-HH",
+        display: "Closed-HH",
       }));
     }
   }
@@ -222,8 +251,18 @@ class App extends React.Component {
         </a>
 
         <p>Hello Drum Machine World</p>
-        <p id="display">{this.state.sound}</p>
+        <p id="display">{this.state.display}</p>
 
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value={this.state.sliderVal}
+          onChange={this.adjustVolume}
+        ></input>
+
+        <br></br>
         <a onClick={this.power} className="btn btn-power">
           POWER
         </a>
