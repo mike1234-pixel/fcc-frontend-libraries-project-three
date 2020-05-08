@@ -266,13 +266,13 @@ class App extends React.Component {
           >
             Q
             <audio
-              src="../Audio-Files/Heater-1.mp3"
+              src="./Audio-Files/Heater-1.mp3"
               id="Q"
               className="clip"
               type="audio/mp3"
             ></audio>
             <audio
-              src="../Audio-Files/Chord-1.mp3"
+              src="./Audio-Files/Chord-1.mp3"
               id="Q-2"
               className="clip"
               type="audio/mp3"
@@ -286,13 +286,13 @@ class App extends React.Component {
           >
             W
             <audio
-              src="../Audio-Files/Heater-2.mp3"
+              src="./Audio-Files/Heater-2.mp3"
               id="W"
               className="clip"
               type="audio/mp3"
             ></audio>
             <audio
-              src="../Audio-Files/Chord-2.mp3"
+              src="./Audio-Files/Chord-2.mp3"
               id="W-2"
               className="clip"
               type="audio/mp3"
@@ -306,13 +306,13 @@ class App extends React.Component {
           >
             E
             <audio
-              src="../Audio-Files/Heater-3.mp3"
+              src="./Audio-Files/Heater-3.mp3"
               id="E"
               className="clip"
               type="audio/mp3"
             ></audio>
             <audio
-              src="../Audio-Files/Chord-3.mp3"
+              src="./Audio-Files/Chord-3.mp3"
               id="E-2"
               className="clip"
               type="audio/mp3"
@@ -326,13 +326,13 @@ class App extends React.Component {
           >
             A
             <audio
-              src="../Audio-Files/Heater-4_1.mp3"
+              src="./Audio-Files/Heater-4_1.mp3"
               id="A"
               className="clip"
               type="audio/mp3"
             ></audio>
             <audio
-              src="../Audio-Files/Shaker.mp3"
+              src="./Audio-Files/Shaker.mp3"
               id="A-2"
               className="clip"
               type="audio/mp3"
@@ -346,13 +346,13 @@ class App extends React.Component {
           >
             S
             <audio
-              src="../Audio-Files/Clap.mp3"
+              src="./Audio-Files/Clap.mp3"
               id="S"
               className="clip"
               type="audio/mp3"
             ></audio>
             <audio
-              src="../Audio-Files/Open-HH-2.mp3"
+              src="./Audio-Files/Open-HH-2.mp3"
               id="S-2"
               className="clip"
               type="audio/mp3"
@@ -366,13 +366,13 @@ class App extends React.Component {
           >
             D
             <audio
-              src="../Audio-Files/Open-HH.mp3"
+              src="./Audio-Files/Open-HH.mp3"
               id="D"
               className="clip"
               type="audio/mp3"
             ></audio>
             <audio
-              src="../Audio-Files/Closed-HH-2.mp3"
+              src="./Audio-Files/Closed-HH-2.mp3"
               id="D-2"
               className="clip"
               type="audio/mp3"
@@ -386,13 +386,13 @@ class App extends React.Component {
           >
             Z
             <audio
-              src="../Audio-Files/Kick-n-Hat.mp3"
+              src="./Audio-Files/Kick-n-Hat.mp3"
               id="Z"
               className="clip"
               type="audio/mp3"
             ></audio>
             <audio
-              src="../Audio-Files/Punchy-Kick.mp3"
+              src="./Audio-Files/Punchy-Kick.mp3"
               id="Z-2"
               className="clip"
               type="audio/mp3"
@@ -406,13 +406,13 @@ class App extends React.Component {
           >
             X
             <audio
-              src="../Audio-Files/Kick.mp3"
+              src="./Audio-Files/Kick.mp3"
               id="X"
               className="clip"
               type="audio/mp3"
             ></audio>
             <audio
-              src="../Audio-Files/Side-Stick.mp3"
+              src="./Audio-Files/Side-Stick.mp3"
               id="X-2"
               className="clip"
               type="audio/mp3"
@@ -426,13 +426,13 @@ class App extends React.Component {
           >
             C
             <audio
-              src="../Audio-Files/Closed-HH.mp3"
+              src="./Audio-Files/Closed-HH.mp3"
               id="C"
               className="clip"
               type="audio/mp3"
             ></audio>
             <audio
-              src="../Audio-Files/Snare.mp3"
+              src="./Audio-Files/Snare.mp3"
               id="C-2"
               className="clip"
               type="audio/mp3"
