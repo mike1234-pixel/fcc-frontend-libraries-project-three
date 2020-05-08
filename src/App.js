@@ -1,15 +1,16 @@
 import React from "react";
-import "./App.css";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      display: "",
+      display: "Drum Machine",
       power: true,
       powerStatus: "on",
       sliderVal: 1,
       bank: "Bank 1",
+      backgroundClass: "heater",
+      buttonClass: "drum-pad",
     };
     this.handleQ = this.handleQ.bind(this);
     this.handleW = this.handleW.bind(this);
@@ -30,11 +31,15 @@ class App extends React.Component {
       this.setState({
         bank: "Bank 2",
         display: "Smooth Piano Kit",
+        backgroundClass: "piano",
+        buttonClass: "drum-pad-inverse",
       });
     } else if (this.state.bank === "Bank 2") {
       this.setState({
         bank: "Bank 1",
         display: "Heater Kit",
+        backgroundClass: "heater",
+        buttonClass: "drum-pad",
       });
     }
   }
@@ -251,157 +256,190 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="drum-machine" style={{ "margin-left": 100 }}>
-        {/* Q BUTTON */}
-        <button className="drum-pad" id="Heater-1" onClick={this.handleQ}>
-          Q
-          <audio
-            src="../Audio-Files/Heater-1.mp3"
-            id="Q"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-          <audio
-            src="../Audio-Files/Chord-1.mp3"
-            id="Q-2"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-        </button>
-        {/* W BUTTON */}
-        <button
-          clbuttonssNbuttonme="drum-pbuttond"
-          id="Hebuttonter-2"
-          onClick={this.handleW}
-        >
-          W
-          <audio
-            src="../Audio-Files/Heater-2.mp3"
-            id="W"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-          <audio
-            src="../Audio-Files/Chord-2.mp3"
-            id="W-2"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-        </button>
-        {/* E BUTTON */}
-        <button className="drum-pad" id="Heater-3" onClick={this.handleE}>
-          E
-          <audio
-            src="../Audio-Files/Heater-3.mp3"
-            id="E"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-          <audio
-            src="../Audio-Files/Chord-3.mp3"
-            id="E-2"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-        </button>
-        {/* A BUTTON */}
-        <button className="drum-pad" id="Heater-4" onClick={this.handleA}>
-          A
-          <audio
-            src="../Audio-Files/Heater-4_1.mp3"
-            id="A"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-          <audio
-            src="../Audio-Files/Shaker.mp3"
-            id="A-2"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-        </button>
-        {/* S BUTTON */}
-        <button className="drum-pad" id="Clap" onClick={this.handleS}>
-          S
-          <audio
-            src="../Audio-Files/Clap.mp3"
-            id="S"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-          <audio
-            src="../Audio-Files/Open-HH-2.mp3"
-            id="S-2"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-        </button>
-        {/* D BUTTON */}
-        <button className="drum-pad" id="Open-HH" onClick={this.handleD}>
-          D
-          <audio
-            src="../Audio-Files/Open-HH.mp3"
-            id="D"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-          <audio
-            src="../Audio-Files/Closed-HH-2.mp3"
-            id="D-2"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-        </button>
-        {/* Z BUTTON */}
-        <button className="drum-pad" id="Kick-n'-Hat" onClick={this.handleZ}>
-          Z
-          <audio
-            src="../Audio-Files/Kick-n-Hat.mp3"
-            id="Z"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-          <audio
-            src="../Audio-Files/Punchy-Kick.mp3"
-            id="Z-2"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-        </button>
-        {/* X BUTTON */}
-        <button className="drum-pad" id="Kick" onClick={this.handleX}>
-          X
-          <audio
-            src="../Audio-Files/Kick.mp3"
-            id="X"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-          <audio
-            src="../Audio-Files/Side-Stick.mp3"
-            id="X-2"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-        </button>
-        {/* C BUTTON */}
-        <button className="drum-pad" id="Closed-HH" onClick={this.handleC}>
-          C
-          <audio
-            src="../Audio-Files/Closed-HH.mp3"
-            id="C"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-          <audio
-            src="../Audio-Files/Snare.mp3"
-            id="C-2"
-            className="clip"
-            type="audio/mp3"
-          ></audio>
-        </button>
+      <div id="drum-machine" className={this.state.backgroundClass}>
+        <div className="sound-button-container">
+          {/* Q BUTTON */}
+          <button
+            className={this.state.buttonClass}
+            id="Heater-1"
+            onClick={this.handleQ}
+          >
+            Q
+            <audio
+              src="../Audio-Files/Heater-1.mp3"
+              id="Q"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+            <audio
+              src="../Audio-Files/Chord-1.mp3"
+              id="Q-2"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+          </button>
+          {/* W BUTTON */}
+          <button
+            className={this.state.buttonClass}
+            id="Heater-2"
+            onClick={this.handleW}
+          >
+            W
+            <audio
+              src="../Audio-Files/Heater-2.mp3"
+              id="W"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+            <audio
+              src="../Audio-Files/Chord-2.mp3"
+              id="W-2"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+          </button>
+          {/* E BUTTON */}
+          <button
+            className={this.state.buttonClass}
+            id="Heater-3"
+            onClick={this.handleE}
+          >
+            E
+            <audio
+              src="../Audio-Files/Heater-3.mp3"
+              id="E"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+            <audio
+              src="../Audio-Files/Chord-3.mp3"
+              id="E-2"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+          </button>
+          {/* A BUTTON */}
+          <button
+            className={this.state.buttonClass}
+            id="Heater-4"
+            onClick={this.handleA}
+          >
+            A
+            <audio
+              src="../Audio-Files/Heater-4_1.mp3"
+              id="A"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+            <audio
+              src="../Audio-Files/Shaker.mp3"
+              id="A-2"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+          </button>
+          {/* S BUTTON */}
+          <button
+            className={this.state.buttonClass}
+            id="Clap"
+            onClick={this.handleS}
+          >
+            S
+            <audio
+              src="../Audio-Files/Clap.mp3"
+              id="S"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+            <audio
+              src="../Audio-Files/Open-HH-2.mp3"
+              id="S-2"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+          </button>
+          {/* D BUTTON */}
+          <button
+            className={this.state.buttonClass}
+            id="Open-HH"
+            onClick={this.handleD}
+          >
+            D
+            <audio
+              src="../Audio-Files/Open-HH.mp3"
+              id="D"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+            <audio
+              src="../Audio-Files/Closed-HH-2.mp3"
+              id="D-2"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+          </button>
+          {/* Z BUTTON */}
+          <button
+            className={this.state.buttonClass}
+            id="Kick-n'-Hat"
+            onClick={this.handleZ}
+          >
+            Z
+            <audio
+              src="../Audio-Files/Kick-n-Hat.mp3"
+              id="Z"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+            <audio
+              src="../Audio-Files/Punchy-Kick.mp3"
+              id="Z-2"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+          </button>
+          {/* X BUTTON */}
+          <button
+            className={this.state.buttonClass}
+            id="Kick"
+            onClick={this.handleX}
+          >
+            X
+            <audio
+              src="../Audio-Files/Kick.mp3"
+              id="X"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+            <audio
+              src="../Audio-Files/Side-Stick.mp3"
+              id="X-2"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+          </button>
+          {/* C BUTTON */}
+          <button
+            className={this.state.buttonClass}
+            id="Closed-HH"
+            onClick={this.handleC}
+          >
+            C
+            <audio
+              src="../Audio-Files/Closed-HH.mp3"
+              id="C"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+            <audio
+              src="../Audio-Files/Snare.mp3"
+              id="C-2"
+              className="clip"
+              type="audio/mp3"
+            ></audio>
+          </button>
+        </div>
 
-        <p>Hello Drum Machine World</p>
         <p id="display">{this.state.display}</p>
 
         <input
@@ -411,14 +449,19 @@ class App extends React.Component {
           step="0.01"
           value={this.state.sliderVal}
           onChange={this.adjustVolume}
+          className="volume-slider"
         ></input>
 
         <br></br>
-        <a onClick={this.power} className="btn btn-power">
-          POWER
-        </a>
+        <div className="control-button-container">
+          <button onClick={this.power} className={this.state.buttonClass}>
+            Power
+          </button>
+          <button onClick={this.setBank} className={this.state.buttonClass}>
+            Mode
+          </button>
+        </div>
         <p className="power-status">{this.state.powerStatus}</p>
-        <button onClick={this.setBank}>Bank</button>
       </div>
     );
   }

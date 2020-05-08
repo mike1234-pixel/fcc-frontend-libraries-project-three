@@ -1,0 +1,20 @@
+#drum-machine {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  overflow: auto;
+}
+
+.heater {
+  background-color: #e17055;
+  color: #74b9ff;
+  transition: all 1s;
+}
+
+.piano {
+  background-color: #74b9ff;
+  color: #e17055;
+  transition: all 1s;
+}
