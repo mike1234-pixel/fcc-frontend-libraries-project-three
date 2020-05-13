@@ -462,6 +462,7 @@ class App extends React.Component {
           </button>
         </div>
         <p className="power-status">{this.state.powerStatus}</p>
+        <p className="footnote">Designed and built by Michael Tandy</p>
       </div>
     );
   }
