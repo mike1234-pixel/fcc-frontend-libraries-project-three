@@ -1,5 +1,4 @@
 import React from "react";
-// import { Heater1 }from "./Audio-Files/Heater-1.mp3";
 
 class App extends React.Component {
   constructor() {
